@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        'use strict'
+
+        function positive(a, b){
+                let differense = a - b;
+                alert(`Разность чисел равна ${differense}`);
+                return;
+        }
+
+        function negative(a, b){
+                let composition = a * b;
+                alert(`Произведение чисел равно ${composition}`);
+                return;
+        }
+        function different(a, b){
+                let sum = a + b;
+                alert(`Сумма чисел равна ${sum}`);
+                return;
+        }
+    
+
+        let a = Number(prompt("Введите первое число"));
+        let b = Number(prompt("Введите второе число"));
+
+     
+        if(a >= 0 && b >= 0){
+            positive(a, b);
+        }else if(a < 0 && b < 0){
+            negative(a, b);
+        }else if((a > 0 && b < 0) || (a < 0 && b > 0)){
+            different(a, b);
+        }else alert("Необходимо ввести числа!")
+        
+
+
+    </script>
+    
+</body>
+</html>

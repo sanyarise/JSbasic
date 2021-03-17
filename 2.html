@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict'
+        /*
+        1. Сначала выполняется выражение в скобках. Оператор *= означает присвоение 
+        переменной a значения a * 2, т. е. равнозначно записи a = a * 2, данное выражение 
+        присвоит переменной a значение 4 (2 * 2 = 4).
+        2. После этого переменной x будет присвоено значение 1 + 4 = 5.
+        3. В результате a = 4, а x = 5, что и покажут последовательно функции
+        alert.  */
+
+        let a = 2;
+        let x = 1 + (a *= 2);
+            
+        console.log(a);
+        console.log(x);
+
+    </script>
+    
+</body>
+</html>
+
+
+
+
