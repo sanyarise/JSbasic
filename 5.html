@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        function addition(arg1, arg2){
+            return arg1 + arg2;
+        }
+        function substraction(arg1, arg2){
+            return arg1 - arg2;
+        }
+        function multiplication(arg1, arg2){
+            return arg1 * arg2;
+        }
+        function division(arg1, arg2){
+            return arg1 / arg2;
+        }
+        function mathOperation(arg1, arg2, operation){
+            switch(operation) {
+                case '+':
+                   let sum = addition(arg1, arg2);
+                   alert(`Результат ${sum}`);
+                    break;
+                case '-':
+                    let difference = substraction(arg1, arg2);
+                    alert(`Результат ${difference}`);
+                    break;
+                case '*':
+                    let composite = multiplication(arg1, arg2);
+                    alert(`Результат ${composite}`);
+                    break;
+                case '/':
+                    let quotient = division(arg1, arg2);
+                    alert(`Результат ${quotient}`);
+                    break;
+                default:
+                    alert(`Нужно было ввести +, -, * или /`);
+                    break;
+            }
+
+        }
+
+        let arg1 = +(prompt("Введите первое число"));
+        let arg2 = +(prompt("Введите второе число"));
+        let operation = prompt("Введите знак операции +, -, * или /");
+        if(isNaN(arg1) || isNaN(arg2)){
+            alert("Нужно было ввести число!");
+        }else{
+            mathOperation(arg1, arg2, operation);
+        }
+        
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict'
+
+        let deposite = String(prompt("Введите сумму вклада"));
+        let depositeLenght = deposite.length;
+        let lastSymbolNumber = deposite.charAt(depositeLenght - 1);
+        switch(lastSymbolNumber){
+            case "1":
+                alert(`Вы зачислили ${deposite} рубль`);
+                break;
+            case "2":
+            case "3":
+            case "4":
+                alert(`Вы зачислили ${deposite} рубля`);
+                break;
+            case "5":
+            case "6":
+            case "7":
+            case "8":
+            case "9":
+            case "0":
+                alert(`Вы зачислили ${deposite} рублей`);
+                break;
+            default:
+                alert("Нужно было ввести число!")
+        }
+    </script>
+    
+</body>
+</html>
