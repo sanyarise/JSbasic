@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const products = [
+            {
+                id: 3,
+                price: 127,
+                photos: [
+                    "1.jpg",
+                    "2.jpg",
+                ]
+            },
+            {
+                id: 5,
+                price: 499,
+                photos: []
+            },
+            {
+                id: 10,
+                price: 26,
+                photos: [
+                    "3.jpg"
+                ]
+            },
+            {
+                id: 8,
+                price: 78,
+            },
+        ];
+        let productsWithPhotos = products.filter(function (product) {
+                if ("photos" in product === true && product.photos.length > 0) {
+                    return product
+                }
+            });
+
+        let sortByPrice = products.sort(function (product1, product2) {
+            if (product1.price > product2.price) return 1;
+            if (product1.price == product2.price) return 0;
+            if (product1.price < product2.price) return -1;
+        }
+        );
+        console.log(productsWithPhotos);
+        console.log(sortByPrice);
+
+    </script>
+</body>
+
+</html>
