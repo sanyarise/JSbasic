@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict'
+
+        function Post(author, text, date) {
+            this.author = author;
+            this.text = text;
+            this.date = date;
+        }
+
+        Post.prototype.edit = function (newText) {
+            this.text = newText;
+        }
+        
+        let post = new Post('Автор', 'Текст', new Date());
+        console.log(post);
+        post.edit('Текст исправленный');
+        console.log(post);
+
+
+        function AttachedPost(author, text, date) {
+            Post.call(this, author, text, date);
+            this.highlighted = false;
+        }
+
+        AttachedPost.prototype = Object.create(Post.prototype);
+        AttachedPost.prototype.constructor = AttachedPost;
+       
+        AttachedPost.prototype.makeTextHighlighted = function () {
+            this.highlighted = true;
+        }
+
+        let attachedPost = new AttachedPost("Автор2", "Текст2", new Date());
+        console.log(attachedPost);
+        attachedPost.makeTextHighlighted();
+        attachedPost.edit("Новый текст");
+        console.log(attachedPost);
+    </script>
+
+</body>
+
+</html>
